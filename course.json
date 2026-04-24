@@ -1,0 +1,51 @@
+{
+  "id": "zowe-config",
+  "title": "Zowe CLI Configuration",
+  "version": "1.0.0",
+  "engineVersion": ">=0.1.0",
+  "steps": [
+    {
+      "id": "verify-and-init",
+      "title": "Verify Zowe CLI and Create Global Config",
+      "instructions": "steps/01-verify-and-init/instructions.md",
+      "validator": "steps/01-verify-and-init/validate.js"
+    },
+    {
+      "id": "configure-global-base",
+      "title": "Configure global_base and zosmf",
+      "instructions": "steps/02-configure-global-base/instructions.md",
+      "solution": "steps/02-configure-global-base/solution",
+      "validator": "steps/02-configure-global-base/validate.js"
+    },
+    {
+      "id": "explore-schema",
+      "title": "Explore the Configuration Schema",
+      "instructions": "steps/03-explore-schema/instructions.md",
+      "validator": "steps/03-explore-schema/validate.js"
+    },
+    {
+      "id": "cli-flag-precedence",
+      "title": "Override Config with CLI Flags",
+      "instructions": "steps/04-cli-flag-precedence/instructions.md",
+      "validator": "steps/04-cli-flag-precedence/validate.js"
+    },
+    {
+      "id": "env-var-precedence",
+      "title": "Override Config with Environment Variables",
+      "instructions": "steps/05-env-var-precedence/instructions.md",
+      "validator": "steps/05-env-var-precedence/validate.js"
+    },
+    {
+      "id": "multiple-configs",
+      "title": "Working with Multiple Config Files",
+      "instructions": "steps/06-multiple-configs/instructions.md",
+      "validator": "steps/06-multiple-configs/validate.js"
+    },
+    {
+      "id": "inspect-and-diagnose",
+      "title": "Inspect and Diagnose Configuration",
+      "instructions": "steps/07-inspect-and-diagnose/instructions.md",
+      "validator": "steps/07-inspect-and-diagnose/validate.js"
+    }
+  ]
+}
