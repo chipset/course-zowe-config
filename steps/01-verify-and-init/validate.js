@@ -6,7 +6,7 @@ module.exports = async function validate(context) {
   }
 
   // Confirm global config was created
-  const { stdout: cfgCheck, exitCode: cfgExit } = await context.terminal.run(
+  const { stdout: cfgCheck, exitCode: cfgExit } = await context.terminal.runShell(
     'test -f ~/.zowe/zowe.config.json && echo "exists"',
   );
   if (cfgExit !== 0 || !cfgCheck.includes('exists')) {
@@ -16,7 +16,7 @@ module.exports = async function validate(context) {
   }
 
   // Confirm the schema was also created
-  const { stdout: schemaCheck } = await context.terminal.run(
+  const { stdout: schemaCheck } = await context.terminal.runShell(
     'test -f ~/.zowe/zowe.config.schema && echo "exists"',
   );
   if (!schemaCheck.includes('exists')) {
