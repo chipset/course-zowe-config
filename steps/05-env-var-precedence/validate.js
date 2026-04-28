@@ -1,6 +1,6 @@
 module.exports = async function validate(context) {
   // Confirm ZOWE_OPT_REJECT_UNAUTHORIZED is not still set (they should have unset it)
-  const { stdout: envCheck } = await context.terminal.run(
+  const { stdout: envCheck } = await context.terminal.runShell(
     'echo "${ZOWE_OPT_REJECT_UNAUTHORIZED:-unset}"',
   );
   if (envCheck.trim() !== 'unset') {
@@ -11,7 +11,7 @@ module.exports = async function validate(context) {
   }
 
   // Confirm the baseline command works (env var was unset correctly)
-  const { exitCode: listExit } = await context.terminal.run(
+  const { exitCode: listExit } = await context.terminal.runShell(
     'zowe files list ds "cust001.*" 2>&1',
   );
   if (listExit !== 0) {
