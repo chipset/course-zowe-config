@@ -1,5 +1,5 @@
 module.exports = async function validate(context) {
-  const { stdout: raw, exitCode } = await context.terminal.run('cat ~/.zowe/zowe.config.json');
+  const { stdout: raw, exitCode } = await context.terminal.runShell('cat ~/.zowe/zowe.config.json');
   if (exitCode !== 0) {
     return context.fail('Could not read `~/.zowe/zowe.config.json`. Make sure it was created in Step 1.');
   }

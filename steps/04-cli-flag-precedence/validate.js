@@ -1,6 +1,6 @@
 module.exports = async function validate(context) {
   // Confirm baseline still works (config is intact)
-  const { stdout: listOut, exitCode: listExit } = await context.terminal.run(
+  const { stdout: listOut, exitCode: listExit } = await context.terminal.runShell(
     'zowe files list ds "cust001.*" 2>&1',
   );
 

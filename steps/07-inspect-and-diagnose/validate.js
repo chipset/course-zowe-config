@@ -1,6 +1,6 @@
 module.exports = async function validate(context) {
   // Confirm zowe config list works
-  const { stdout: listOut, exitCode: listExit } = await context.terminal.run('zowe config list 2>&1');
+  const { stdout: listOut, exitCode: listExit } = await context.terminal.runShell('zowe config list 2>&1');
   if (listExit !== 0) {
     return context.fail(
       '`zowe config list` failed. Make sure Zowe CLI is installed and a config file exists.',
@@ -15,7 +15,7 @@ module.exports = async function validate(context) {
   }
 
   // Confirm report-env works
-  const { stdout: reportOut, exitCode: reportExit } = await context.terminal.run(
+  const { stdout: reportOut, exitCode: reportExit } = await context.terminal.runShell(
     'zowe config report-env 2>&1',
   );
   if (reportExit !== 0) {
@@ -26,7 +26,7 @@ module.exports = async function validate(context) {
   }
 
   // Check ZOWE_OPT_NAME was unset
-  const { stdout: envCheck } = await context.terminal.run(
+  const { stdout: envCheck } = await context.terminal.runShell(
     'echo "${ZOWE_OPT_NAME:-unset}"',
   );
   if (envCheck.trim() !== 'unset') {

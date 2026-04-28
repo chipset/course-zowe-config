@@ -1,6 +1,6 @@
 module.exports = async function validate(context) {
   // Check the not-working directory was created
-  const { stdout: dirCheck, exitCode: dirExit } = await context.terminal.run(
+  const { stdout: dirCheck, exitCode: dirExit } = await context.terminal.runShell(
     'test -d not-working && echo "exists"',
   );
   if (dirExit !== 0 || !dirCheck.includes('exists')) {
@@ -11,7 +11,7 @@ module.exports = async function validate(context) {
   }
 
   // Check a config file was imported into it
-  const { stdout: cfgCheck } = await context.terminal.run(
+  const { stdout: cfgCheck } = await context.terminal.runShell(
     'test -f not-working/zowe.config.json && echo "exists"',
   );
   if (!cfgCheck.includes('exists')) {
@@ -30,7 +30,7 @@ module.exports = async function validate(context) {
   }
 
   // Confirm the baseline works from the parent directory
-  const { exitCode: listExit } = await context.terminal.run(
+  const { exitCode: listExit } = await context.terminal.runShell(
     'zowe files list ds cust001 2>&1',
   );
   if (listExit !== 0) {
