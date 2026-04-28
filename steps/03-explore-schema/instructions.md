@@ -1,9 +1,9 @@
 # Explore the Configuration Schema
 
-Open `zowe.config.schema` in the editor:
+Open `zowe.schema.json` in the editor:
 
 ```
-code ~/.zowe/zowe.config.schema
+code ~/.zowe/zowe.schema.json
 ```
 
 > **Do not modify this file.** It is managed automatically by Zowe CLI.
@@ -27,6 +27,6 @@ regenerates the schema file (and any schema files further up the directory tree)
 
 ## Try it
 
-Scroll through `zowe.config.schema` and find the `zosmf` profile type. Notice how each property lists its type, description, and valid values — exactly what VS Code reads to power IntelliSense in `zowe.config.json`.
+Scroll through `zowe.schema.json` and find the `zosmf` profile type. Notice how each property lists its type, description, and valid values — exactly what VS Code reads to power IntelliSense in `zowe.config.json`.
 
 When you're done exploring, close the schema file and click **Check Work**.

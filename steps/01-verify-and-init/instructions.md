@@ -41,6 +41,6 @@ Two files are of interest:
 | File | Purpose |
 |---|---|
 | `zowe.config.json` | All connection settings for the Zowe CLI and Zowe Explorer |
-| `zowe.config.schema` | JSON schema — drives editor validation and autocomplete |
+| `zowe.schema.json` | JSON schema — drives editor validation and autocomplete |
 
 Click **Check Work** when done.

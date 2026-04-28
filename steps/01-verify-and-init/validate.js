@@ -17,11 +17,11 @@ module.exports = async function validate(context) {
 
   // Confirm the schema was also created
   const { stdout: schemaCheck } = await context.terminal.runShell(
-    'test -f ~/.zowe/zowe.config.schema && echo "exists"',
+    'test -f ~/.zowe/zowe.schema.json && echo "exists"',
   );
   if (!schemaCheck.includes('exists')) {
     return context.warn(
-      'Global config created, but `zowe.config.schema` is missing. ' +
+      'Global config created, but `zowe.schema.json` is missing. ' +
       'It is usually created automatically — try running `zowe config update-schemas`.',
     );
   }

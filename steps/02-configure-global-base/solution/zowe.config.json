@@ -1,5 +1,5 @@
 {
-    "$schema": "./zowe.config.schema",
+    "$schema": "./zowe.schema.json",
     "profiles": {
         "zosmf": {
             "type": "zosmf",
