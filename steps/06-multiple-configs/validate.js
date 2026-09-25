@@ -1,23 +1,23 @@
 module.exports = async function validate(context) {
   // Check the not-working directory was created
   const { stdout: dirCheck, exitCode: dirExit } = await context.terminal.runShell(
-    'test -d not-working && echo "exists"',
+    'test -d ~/not-working && echo "exists"',
   );
   if (dirExit !== 0 || !dirCheck.includes('exists')) {
     return context.fail(
       '`not-working/` directory not found. Create it with:\n' +
-      '`mkdir not-working && cd not-working && zowe config import ~/.zowe/zowe.config.json`',
+      '`mkdir ~/not-working && cd not-working && zowe config import ~/.zowe/zowe.config.json`',
     );
   }
 
   // Check a config file was imported into it
   const { stdout: cfgCheck } = await context.terminal.runShell(
-    'test -f not-working/zowe.config.json && echo "exists"',
+    'test -f ~/not-working/zowe.config.json && echo "exists"',
   );
   if (!cfgCheck.includes('exists')) {
     return context.fail(
       '`not-working/zowe.config.json` not found. ' +
-      'Run `cd not-working && zowe config import ~/.zowe/zowe.config.json`.',
+      'Run `cd ~/not-working && zowe config import ~/.zowe/zowe.config.json`.',
     );
   }
 

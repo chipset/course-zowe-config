@@ -43,4 +43,11 @@ Two files are of interest:
 | `zowe.config.json` | All connection settings for the Zowe CLI and Zowe Explorer |
 | `zowe.schema.json` | JSON schema — drives editor validation and autocomplete |
 
+You can type 
+```code ~/.zowe/zowe.config.json```
+And it will open the file. 
+
+To open the config.json, type:
+```code ~/.zowe/zowe.schema.json```
+
 Click **Check Work** when done.

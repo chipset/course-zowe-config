@@ -35,20 +35,6 @@ module.exports = async function validate(context) {
     );
   }
 
-  const lastCmd = await context.terminal.lastCommand();
-  const usedInspection =
-    lastCmd.includes('config list') ||
-    lastCmd.includes('report-env') ||
-    lastCmd.includes('show-inputs') ||
-    lastCmd.includes('unset');
-
-  if (!usedInspection) {
-    return context.warn(
-      'Config is set up correctly! Try running `zowe config list --locations` and ' +
-      '`zowe config report-env` to explore the diagnostic tools.',
-    );
-  }
-
   return context.pass(
     'Course complete! You can now create, configure, layer, and diagnose Zowe CLI configuration files.',
   );
