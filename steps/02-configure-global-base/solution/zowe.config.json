@@ -11,7 +11,7 @@
         "tso": {
             "type": "tso",
             "properties": {
-                "account": "",
+                "account": "IZUACCT",
                 "codePage": "1047",
                 "logonProcedure": "IZUFPROC"
             },

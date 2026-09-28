@@ -29,4 +29,14 @@ regenerates the schema file (and any schema files further up the directory tree)
 
 Scroll through `zowe.schema.json` and find the `zosmf` profile type. Notice how each property lists its type, description, and valid values — exactly what VS Code reads to power IntelliSense in `zowe.config.json`.
 
+## How the two files are linked
+
+Open `zowe.config.json` again and look at the very first line:
+
+```json
+"$schema": "./zowe.schema.json"
+```
+
+This is what tells your editor which schema file to use for validation and autocomplete on *this* config file. It's a relative path, so if you ever move a config file to a different directory without its matching schema, editor tooling stops working until you run `zowe config update-schemas` again from that location.
+
 When you're done exploring, close the schema file and click **Check Work**.

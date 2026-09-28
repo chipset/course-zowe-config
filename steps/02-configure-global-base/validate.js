@@ -41,6 +41,13 @@ module.exports = async function validate(context) {
     problems.push(`\`zosmf.properties.port\` should be 10443, but is ${zosmf.port ?? 'not set'}.`);
   }
 
+  const tso = cfg?.profiles?.tso?.properties ?? {};
+  if (tso.account !== 'IZUACCT') {
+    problems.push(
+      `\`tso.properties.account\` should be "IZUACCT" (run \`zowe config set profiles.tso.properties.account IZUACCT\`), but is ${JSON.stringify(tso.account ?? null)}.`,
+    );
+  }
+
   if (problems.length > 0) {
     return context.fail('Fix the following in `~/.zowe/zowe.config.json`:\n• ' + problems.join('\n• '));
   }

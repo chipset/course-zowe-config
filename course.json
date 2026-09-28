@@ -18,34 +18,40 @@
       "validator": "steps/02-configure-global-base/validate.js"
     },
     {
+      "id": "defaults-and-named-profiles",
+      "title": "Named Profiles and Defaults",
+      "instructions": "steps/03-defaults-and-named-profiles/instructions.md",
+      "validator": "steps/03-defaults-and-named-profiles/validate.js"
+    },
+    {
       "id": "explore-schema",
       "title": "Explore the Configuration Schema",
-      "instructions": "steps/03-explore-schema/instructions.md",
-      "validator": "steps/03-explore-schema/validate.js"
+      "instructions": "steps/04-explore-schema/instructions.md",
+      "validator": "steps/04-explore-schema/validate.js"
     },
     {
       "id": "cli-flag-precedence",
       "title": "Override Config with CLI Flags",
-      "instructions": "steps/04-cli-flag-precedence/instructions.md",
-      "validator": "steps/04-cli-flag-precedence/validate.js"
+      "instructions": "steps/05-cli-flag-precedence/instructions.md",
+      "validator": "steps/05-cli-flag-precedence/validate.js"
     },
     {
       "id": "env-var-precedence",
       "title": "Override Config with Environment Variables",
-      "instructions": "steps/05-env-var-precedence/instructions.md",
-      "validator": "steps/05-env-var-precedence/validate.js"
+      "instructions": "steps/06-env-var-precedence/instructions.md",
+      "validator": "steps/06-env-var-precedence/validate.js"
     },
     {
       "id": "multiple-configs",
       "title": "Working with Multiple Config Files",
-      "instructions": "steps/06-multiple-configs/instructions.md",
-      "validator": "steps/06-multiple-configs/validate.js"
+      "instructions": "steps/07-multiple-configs/instructions.md",
+      "validator": "steps/07-multiple-configs/validate.js"
     },
     {
       "id": "inspect-and-diagnose",
       "title": "Inspect and Diagnose Configuration",
-      "instructions": "steps/07-inspect-and-diagnose/instructions.md",
-      "validator": "steps/07-inspect-and-diagnose/validate.js"
+      "instructions": "steps/08-inspect-and-diagnose/instructions.md",
+      "validator": "steps/08-inspect-and-diagnose/validate.js"
     }
   ]
 }

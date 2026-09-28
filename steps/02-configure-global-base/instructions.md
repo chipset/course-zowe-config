@@ -52,4 +52,18 @@ Find the `zosmf` profile and change port `443` to `10443`:
 
 The default z/OSMF port is 443, but this environment uses 10443. Because each service can have a different port, this can't go in `global_base`.
 
+## Setting a value from the command line
+
+Hand-editing JSON works, but it's easy to introduce a typo or invalid value. Zowe CLI can set a single property for you, validating it against the schema as it writes:
+
+```
+zowe config set profiles.tso.properties.account IZUACCT
+```
+
+This walks the JSON path `profiles.tso.properties.account` and sets it to `IZUACCT` — the same edit you could make by hand in the `tso` profile, but scriptable and schema-checked. Confirm it landed:
+
+```
+zowe config list profiles.tso.properties
+```
+
 Save the file, then click **Check Work**.

@@ -50,4 +50,16 @@ And it will open the file.
 To open the config.json, type:
 ```code ~/.zowe/zowe.schema.json```
 
+## About that secure storage warning
+
+The warning you saw is because `zowe config secure` — the command that normally prompts for sensitive properties (like `user`, `password`, `tokenValue`) and writes them into the OS keychain instead of the plain-text config file — needs a keychain that this workshop container doesn't have. In a real install, after running `zowe config secure` those properties would move into each profile's `secure` array and disappear from `properties`.
+
+This course uses a different workaround (environment variables) covered in a later step, so you won't run `zowe config secure` for real here. You can still see what it offers:
+
+```
+zowe config secure --help
+```
+
+This is informational only — nothing here is checked.
+
 Click **Check Work** when done.
