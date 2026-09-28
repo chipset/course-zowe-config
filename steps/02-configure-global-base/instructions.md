@@ -63,7 +63,7 @@ zowe config set profiles.tso.properties.account IZUACCT
 This walks the JSON path `profiles.tso.properties.account` and sets it to `IZUACCT` — the same edit you could make by hand in the `tso` profile, but scriptable and schema-checked. Confirm it landed:
 
 ```
-zowe config list profiles.tso.properties
+zowe config list
 ```
 
 Save the file, then click **Check Work**.
