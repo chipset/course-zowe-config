@@ -20,7 +20,7 @@
     },
     "version": {
       "type": "string",
-      "pattern": "^\\\\d+\\\\.\\\\d+\\\\.\\\\d+"
+      "pattern": "^\\d+\\.\\d+\\.\\d+"
     },
     "engineVersion": {
       "type": "string"
@@ -35,8 +35,7 @@
         "required": [
           "id",
           "title",
-          "instructions",
-          "hints"
+          "instructions"
         ],
         "properties": {
           "id": {
