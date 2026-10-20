@@ -1,12 +1,12 @@
 module.exports = async function validate(context) {
   // Confirm baseline still works (config is intact)
   const { stdout: listOut, exitCode: listExit } = await context.terminal.runShell(
-    'zowe files list ds "cust001.*" 2>&1',
+    'zowe files list ds "cust002.*" 2>&1',
   );
 
   if (listExit !== 0) {
     return context.fail(
-      'The baseline `zowe files list ds "cust001.*"` command is failing. ' +
+      'The baseline `zowe files list ds "cust002.*"` command is failing. ' +
       'Check that your `~/.zowe/zowe.config.json` is still correctly configured from Step 2.',
     );
   }
@@ -21,7 +21,7 @@ module.exports = async function validate(context) {
 
   if (!triedOverride) {
     return context.warn(
-      'Baseline works! Now try an override: `zowe files list ds "cust001.*" --password wrong` ' +
+      'Baseline works! Now try an override: `zowe files list ds "cust002.*" --password wrong` ' +
       'to see how CLI flags take precedence over the config file.',
     );
   }

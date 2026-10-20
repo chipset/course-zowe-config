@@ -34,7 +34,7 @@ Find `"rejectUnauthorized": false` and change it to `"rejectUnauthorized": true`
 Now run:
 
 ```
-zowe files list ds cust001
+zowe files list ds cust002
 ```
 
 It should fail with a certificate error — the project config overrides the global.
@@ -45,7 +45,7 @@ Navigate back to the parent directory:
 
 ```
 cd ..
-zowe files list ds cust001
+zowe files list ds cust002
 ```
 
 It works again. Zowe is now using the global `~/.zowe/zowe.config.json` because there's no config in this directory.
@@ -64,7 +64,7 @@ ls -la
 `zowe.config.user.json` overlays values on top of `zowe.config.json` in the same directory. Since your global config has `"rejectUnauthorized": false`, the user config overrides the broken project config:
 
 ```
-zowe files list ds cust001
+zowe files list ds cust002
 ```
 
 It should work again.
@@ -75,7 +75,7 @@ Delete the user config and confirm the error returns:
 
 ```
 rm zowe.config.user.json
-zowe files list ds cust001
+zowe files list ds cust002
 ```
 
 Then go back to the parent directory and click **Check Work**.

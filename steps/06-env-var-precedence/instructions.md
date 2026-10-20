@@ -11,14 +11,14 @@ Any `zowe.config.json` property can be overridden by an environment variable nam
 ## Test 1 — Confirm the baseline still works
 
 ```
-zowe files list ds "cust001.*"
+zowe files list ds "cust002.*"
 ```
 
 ## Test 2 — Override rejectUnauthorized via environment variable
 
 ```
 export ZOWE_OPT_REJECT_UNAUTHORIZED=true
-zowe files list ds "cust001.*"
+zowe files list ds "cust002.*"
 ```
 
 Your `zowe.config.json` has `"rejectUnauthorized": false`, but the environment variable overrides it to `true`. The command should fail with a certificate error — the self-signed mainframe certificate is now being rejected.
@@ -36,7 +36,7 @@ Environment variables persist for the lifetime of the shell session. Unset it to
 
 ```
 unset ZOWE_OPT_REJECT_UNAUTHORIZED
-zowe files list ds "cust001.*"
+zowe files list ds "cust002.*"
 ```
 
 The command should succeed again, proving the config file value is back in control.

@@ -44,7 +44,7 @@ This simulates a second z/OSMF instance — one that's reachable, but listening 
 `defaults.zosmf` still points at `zosmf`, so this should still work:
 
 ```
-zowe files list ds "cust001.*"
+zowe files list ds "cust002.*"
 ```
 
 ## Step 3 — Select the other profile explicitly
@@ -52,7 +52,7 @@ zowe files list ds "cust001.*"
 Every service command group has a `--<type>-profile` flag that picks a specific named profile, ignoring `defaults`:
 
 ```
-zowe files list ds "cust001.*" --zosmf-profile zosmf_test
+zowe files list ds "cust002.*" --zosmf-profile zosmf_test
 ```
 
 This should fail with `ECONNREFUSED` — you've explicitly targeted `zosmf_test`, which is on the wrong port, without touching `defaults` at all.
@@ -62,7 +62,7 @@ This should fail with `ECONNREFUSED` — you've explicitly targeted `zosmf_test`
 Now edit `defaults.zosmf` and change it from `"zosmf"` to `"zosmf_test"`. Save the file, then run the baseline command **without any flag**:
 
 ```
-zowe files list ds "cust001.*"
+zowe files list ds "cust002.*"
 ```
 
 It fails the same way — because now `zosmf_test` *is* the default. `defaults` controls which named profile is used implicitly; `--<type>-profile` overrides it for a single command.
@@ -72,7 +72,7 @@ It fails the same way — because now `zosmf_test` *is* the default. `defaults` 
 Change `defaults.zosmf` back to `"zosmf"` and save. Confirm the baseline works again:
 
 ```
-zowe files list ds "cust001.*"
+zowe files list ds "cust002.*"
 ```
 
 Click **Check Work** when done.

@@ -12,7 +12,7 @@ module.exports = async function validate(context) {
 
   // Confirm the baseline command works (env var was unset correctly)
   const { exitCode: listExit } = await context.terminal.runShell(
-    'zowe files list ds "cust001.*" 2>&1',
+    'zowe files list ds "cust002.*" 2>&1',
   );
   if (listExit !== 0) {
     return context.fail(

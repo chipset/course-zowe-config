@@ -18,7 +18,7 @@ Find the `global_base` section and replace it with:
 "global_base": {
     "type": "base",
     "properties": {
-        "host": "10.1.2.123",
+        "host": "10.1.2.55",
         "rejectUnauthorized": false,
         "user": "$ZOWE_OPT_USER",
         "password": "$ZOWE_OPT_PASSWORD"

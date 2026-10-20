@@ -31,7 +31,7 @@ module.exports = async function validate(context) {
 
   // Confirm the baseline works from the parent directory
   const { exitCode: listExit } = await context.terminal.runShell(
-    'zowe files list ds cust001 2>&1',
+    'zowe files list ds cust002 2>&1',
   );
   if (listExit !== 0) {
     return context.fail(

@@ -34,16 +34,16 @@ module.exports = async function validate(context) {
     );
   }
 
-  const { exitCode: listExit } = await context.terminal.runShell('zowe files list ds "cust001.*" 2>&1');
+  const { exitCode: listExit } = await context.terminal.runShell('zowe files list ds "cust002.*" 2>&1');
   if (listExit !== 0) {
     return context.fail(
-      'The baseline `zowe files list ds "cust001.*"` command is failing. ' +
+      'The baseline `zowe files list ds "cust002.*"` command is failing. ' +
       'Make sure `defaults.zosmf` is back to `"zosmf"` and `zosmf.properties.port` is still 10443.',
     );
   }
 
   const { exitCode: explicitExit } = await context.terminal.runShell(
-    'zowe files list ds "cust001.*" --zosmf-profile zosmf_test 2>&1',
+    'zowe files list ds "cust002.*" --zosmf-profile zosmf_test 2>&1',
   );
   if (explicitExit === 0) {
     return context.warn(
